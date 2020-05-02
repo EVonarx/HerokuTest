@@ -8,4 +8,7 @@ const server = http.createServer((req, res) => {
   res.end('<h1>That is a great app running on PaaS Heroku</h1>');
 });
 
-server.listen(8080);
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log("Our app is running on port ${PORT}");
+});
